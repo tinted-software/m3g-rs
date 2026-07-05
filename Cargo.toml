@@ -1,0 +1,20 @@
+[package]
+name = "m3g-rs"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "m3g"
+
+[dependencies]
+glam = { version = "0.33.2", default-features = false }
+zlib-rs = { version = "0.6.5", default-features = false }
+zerocopy = { version = "0.8.52", default-features = false, features = ["derive"] }
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.dev]
+opt-level = 1
+split-debuginfo = "packed"
